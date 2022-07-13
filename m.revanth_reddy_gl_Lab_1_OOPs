@@ -1,0 +1,103 @@
+public class Shape{
+	String color;
+	public Shape(String color) {
+		this.color = color;
+	}
+	public double calculateArea() {
+		return 0;
+	}
+	public double calculatePerimeter() {
+		return 0;
+	}
+	public void display() {
+		System.out.println("this is a shape with color");
+	}
+	
+}
+class Triangle extends Shape{
+	int height,base;
+	public Triangle(String color,int height, int base) {
+		super(color);
+		this.height = height;
+		this.base = base;
+	}
+	public double calculateArea() {
+		return (height*base)/2;
+	}
+	public double calculatePerimeter() {
+		return ((height+base)+Math.sqrt(height^2 + base^2));
+	}
+	public void display() {
+		System.out.println("This is a" +super.color+" "+"triangle");
+	}
+	
+}
+class Rectangle extends Shape{
+	int lenght,breadth;
+	public Rectangle(String color,int lenght,int breadth) {
+		super(color);
+		this.lenght = lenght;
+		this.breadth = breadth;
+	}
+	public double calculateArea() {
+		return (lenght*breadth);
+	}
+	public double calculatePerimeter() {
+		return (2*(lenght*breadth));
+	}
+	public void display() {
+		System.out.println("This is a "+super.color+" "+"rectangle");
+	}
+}
+class Circle extends Shape{
+	int radius;
+	public Circle(String color,int radius) {
+		super(color);
+		this.radius = radius;
+	}
+	public double calculateArea() {
+		return (Math.PI*(radius^2));
+	}
+	public double calculatePerimeter() {
+		return (Math.PI*2*(radius));
+	}
+	public void display() {
+		System.out.println("This is a "+super.color+" "+"circle");
+	}
+}
+class Square extends Shape{
+	int side;
+	public Square(String color,int side) {
+		super(color);
+		this.side = side;
+	}
+	public double calculateArea() {
+		return (side*side);
+	}
+	public double calculatePerimeter() {
+		return (4*side);
+	}
+	public void display() {
+		System.out.println("This is a "+super.color+" "+"square");
+	}
+}
+public class Main{
+	public static void main(String[] args) {
+		Rectangle rectangle = new rectangle("yellow",4,8);
+		System.out.println(rectangle.calculateArea());
+		System.out.println(rectangle.calculatePerimeter());
+		rectangle.display();
+		Triangle triangle = new Triangle("red",2,4);
+		System.out.println(triangle.calculateArea());
+		System.out.println(triangle.calculatePerimeter());
+		triangle.display();
+		Circle circle = new Circle("white",3);
+		System.out.println(circle.calculateArea());
+		System.out.println(circle.calculatePerimeter());
+		circle.display();
+		Square sq = new Square("green",5);
+		System.out.println(sq.calculateArea());
+		System.out.println(sq.calculatePerimeter());
+		sq.display();		
+	}
+}
